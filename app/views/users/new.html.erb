@@ -1,0 +1,17 @@
+<h1>Sign Up Here</h1>
+
+<%= form_for @user do |f| %>
+
+    <%= f.lable :name %>
+    <%= f.text_field :name %>
+
+    <%= f.lable :age %>
+    <%= f.text_field :age %>
+
+    <%= f.lable :email %>
+    <%= f.email_field :email %>
+
+    <%= f.lable :password %>
+    <%= f.password_field :password %>
+
+    <% end %>
