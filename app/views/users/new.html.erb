@@ -2,16 +2,18 @@
 
 <%= form_for @user do |f| %>
 
-    <%= f.lable :name %>
+    <%= f.label :name %>
     <%= f.text_field :name %>
 
-    <%= f.lable :age %>
+    <%= f.label :age %>
     <%= f.text_field :age %>
 
-    <%= f.lable :email %>
-    <%= f.email_field :email %>
+    <%= f.label :email %>
+    <%= f.email_field :email, required:true %>
 
-    <%= f.lable :password %>
+    <%= f.label :password %>
     <%= f.password_field :password %>
+
+    <%= f.submit 'Sign Up' %>
 
     <% end %>
