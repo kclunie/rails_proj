@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
 
     def index
+        if params[:user_id]
+            @events = User.find(params[:user_id]).events
+          else
         @events = Event.all
-    
+    end
     end
 
     def new
@@ -20,6 +23,9 @@ class EventsController < ApplicationController
 
     def show
         @event = Event.find_by(id: params[:id])
+        @attend = Attend.new
+        @user = User.find(session[:user_id])
+        @attends = Attend.all
     end
 
     private

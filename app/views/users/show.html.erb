@@ -1,1 +1,8 @@
 <h1>Welcome <%=@user.name%></h1>
+
+<p><%= @user.name %>'s Events he is Attending</p>
+<% @user.events.each do |f| %>
+    <li><%= link_to "#{f.name}", event_path(f) %></li>
+    <% end %>
+
+    

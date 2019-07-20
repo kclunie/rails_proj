@@ -1,10 +1,11 @@
 <br>
 <br>
 <% @events.each do |f| %>
-    <li><%= f.name %></li>
+   
+    <li><%= link_to "#{f.name}", event_path(f) %></li>
     <li><%= f.date %></li>
     <li><%= f.location %></li>
-    <li><%= f.details %></li>
+
     <br>
     <% end %>
 

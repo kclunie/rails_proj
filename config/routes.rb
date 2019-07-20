@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
 
   resources :attends
+
+  resources :users do
+    resources :events 
+  end
+
   resources :events
-  resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

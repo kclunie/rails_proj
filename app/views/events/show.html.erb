@@ -2,3 +2,16 @@
 <h4>Date: <%= @event.date %></h4>
 <h4>Location: <%= @event.location %></h4>
 <h4>Details: <%= @event.details %></h4>
+
+  
+
+<%= form_for(@attend) do |f|%>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+    <%= f.hidden_field :event_id, :value => @event.id %>
+
+    <%= f.label "How many guests will you bring?" %>
+    <%= f.number_field :guest %>
+    <br>
+    <br>
+    <%= f.submit 'Attend this Event' %>
+    <% end %>
