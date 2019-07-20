@@ -9,8 +9,30 @@
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.hidden_field :event_id, :value => @event.id %>
 
-    <%= f.label "How many guests will you bring?" %>
+    <%= f.label :guest, "How many guests will you bring?" %>
     <%= f.number_field :guest %>
+    <br>
+    <br>
+    <%= f.label :user_id, "Invite a user" %>
+    <%= f.collection_select :user_id, User.all, :id, :name %>
+    
+    <h4>Or Create a User to Invite</h4>
+
+    <%= f.fields_for :user do |u| %>
+        
+        <%= u.label :name %>
+        <%= u.text_field :name %>
+    
+        <%= u.label :age %>
+        <%= u.text_field :age %>
+    
+        <%= u.label :email %>
+        <%= u.email_field :email, required:true %>
+    
+        <%= u.label :password %>
+        <%= u.password_field :password %>
+        <% end %>
+
     <br>
     <br>
     <%= f.submit 'Attend this Event' %>

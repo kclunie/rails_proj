@@ -2,6 +2,7 @@ class AttendsController < ApplicationController
 
     def new
         @attend = Attend.new
+        #@attend.build_user
     end
 
     def create
@@ -17,7 +18,9 @@ class AttendsController < ApplicationController
     def attends_params
       params.require(:attend).permit(
          :user_id,
-         :event_id
+         :event_id,
+         :guest,
+         user_attributes:[:name, :age, :email, :password]
       )
     end
 

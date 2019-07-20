@@ -24,6 +24,7 @@ class EventsController < ApplicationController
     def show
         @event = Event.find_by(id: params[:id])
         @attend = Attend.new
+        @attend.build_user
         @user = User.find(session[:user_id])
         @attends = Attend.all
     end
