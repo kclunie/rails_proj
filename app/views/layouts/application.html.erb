@@ -11,7 +11,9 @@
 
   <body>
 
-  <%= link_to 'Logout', '/logout', method: :delete%>  
+  <%= link_to 'Logout', '/logout', method: :delete%> 
+  <%= link_to 'Events', events_path %>
+  <%= link_to 'Create Event', new_event_path %> 
     <%= yield %>
   </body>
 </html>
