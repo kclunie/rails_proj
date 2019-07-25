@@ -10,12 +10,14 @@
   </head>
 
   <body>
-
+  <% if logged_in? %>
   <%= link_to 'Logout', '/logout', method: :delete%> 
-
+  <%= link_to 'Home', user_path(current_user) %>
   <%= link_to 'Events', events_path %>
   <%= link_to 'Create Event', new_event_path %> 
   <%= link_to 'RSVPs', attends_path %>
+<% end %>
+
     <%= yield %>
   </body>
 </html>

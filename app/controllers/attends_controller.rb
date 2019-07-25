@@ -2,10 +2,11 @@ class AttendsController < ApplicationController
 
     def index
         if params[:event_id] && event = Event.find_by_id(params[:event_id])
+            #@attends = current_user.attends.by_event(params[:event_id])
             @attends = event.attends
         else
             @attends = current_user.attends
-            #should be @attends = Attends.all
+            #could be @attends = Attends.all
         end
     end
     

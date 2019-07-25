@@ -1,5 +1,6 @@
 <br><br>
 <% @attends.each do |f| %>
-    <%= f.guest %>
-    <%= f.event.name %> 
+    <%= "Number of guests: #{f.guest}" %>
+    <%= " - Event: #{f.event.name}" %> 
+    <br>
     <% end %>

@@ -1,8 +1,15 @@
 <h1>Welcome <%=@user.name%></h1>
 
-<p><%= @user.name %>'s Events he is Attending</p>
-<% @user.events.each do |f| %>
-    <li><%= link_to "#{f.name}", event_path(f) %></li>
+<p><%= @user.name %>'s Upcoming Events</p>
+
+<% x = @user.events %>
+<% y = x.uniq %>
+<% y.each do |z| %>
+<li><%= link_to "#{z.name}", event_path(z) %></li>
+<br>
     <% end %>
+
+
+
 
     
