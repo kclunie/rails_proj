@@ -1,6 +1,7 @@
 <br><br>
-<% @attends.each do |f| %>
-    <%= "Number of guests: #{f.guest}" %>
-    <%= " - Event: #{f.event.name}" %> 
-    <br>
+<% @attends.each.with_index(1) do |f, index| %>
+   
+    <%= "#{index}. Number of guests: + #{f.guest}" %>
+
+  <br>
     <% end %>
