@@ -3,7 +3,7 @@
 
 <h2><%= @attend.event.name %></h2>
 
-  
+<%= render partial: "layouts/errors", locals: {object: @attend} %>
 
 <%= form_for(@attend) do |f|%>
     <%= f.hidden_field :user_id, :value => @user.id %>

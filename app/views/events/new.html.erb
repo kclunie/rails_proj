@@ -1,5 +1,7 @@
 <h1>Create a New Event</h1>
 
+<%= render partial: "layouts/errors", locals: {object: @event} %>
+
 <%= form_for @event do |f| %>
 
     <%= f.label :name %>
