@@ -5,6 +5,10 @@
 
 <h2><%= @attend.event.name %></h2>
 
+<% if flash[:message] %>
+<div class="message"><%= flash[:message] %></div>
+<% end %><br>
+
 <%= form_for(@attend) do |f|%>
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.hidden_field :event_id, :value => @event.id %>

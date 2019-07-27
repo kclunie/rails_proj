@@ -1,5 +1,7 @@
 <h1>Welcome <%=@user.name%></h1>
 
+<%= render partial: "layouts/errors", locals: {object: @attend} %>
+
 <p><%= @user.name %>'s Upcoming Events</p>
 
 <% x = @user.events %>

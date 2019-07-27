@@ -13,6 +13,7 @@ class AttendsController < ApplicationController
     def new
         @event = Event.find_by(id: params[:event_id])
         @user = User.find(session[:user_id])
+        #binding.pry
         if params[:event_id] && event = Event.find_by_id(params[:event_id])
             @attend = event.attends.build 
         else
@@ -25,8 +26,15 @@ class AttendsController < ApplicationController
         @event = Event.find(attends_params[:event_id])
         @user = User.find(session[:user_id])
         @attend = Attend.create(attends_params)
-        #flash[:message] = @ride.take_ride
-        redirect_to user_path(@user)
+        
+        if @attend.save
+            redirect_to attends_path
+           
+          else
+            flash[:message] = "Guest cannot be blank!"
+           redirect_to new_event_attend_path(@event)
+        #redirect_to user_path(@user)
+          end
     end
 
     private

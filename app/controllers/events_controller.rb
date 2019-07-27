@@ -4,7 +4,7 @@ class EventsController < ApplicationController
         if params[:user_id]
             @events = User.find(params[:user_id]).events
           else
-        @events = Event.all
+        @events = Event.order_by_date
     end
     end
 
@@ -27,6 +27,7 @@ class EventsController < ApplicationController
         @attend.build_user
         @user = User.find(session[:user_id])
         @attends = Attend.all
+
     end
 
     private

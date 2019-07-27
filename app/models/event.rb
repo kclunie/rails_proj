@@ -4,5 +4,8 @@ class Event < ApplicationRecord
     validates :name, :date, :location, :details, presence: true
     #validates :date, numericality: {message: "%(value) must be included"}
 
+    #accepts_nested_attributes_for :attends
+
+    scope :order_by_date, -> {order(date: :asc)}
 
 end
