@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+    before_action :set_event, only: [:show]
+
     def index
         if params[:user_id]
             @events = User.find(params[:user_id]).events
@@ -22,7 +24,7 @@ class EventsController < ApplicationController
     end
 
     def show
-        @event = Event.find_by(id: params[:id])
+       # @event = Event.find_by(id: params[:id])
         @attend = Attend.new
         @attend.build_user
         @user = User.find(session[:user_id])
@@ -35,5 +37,11 @@ class EventsController < ApplicationController
     def event_params
         params.require(:event).permit(:name, :date, :location, :details)
     end
+
+    def set_event
+        @event = Event.find_by(id: params[:id])
+        redirect_to events_path if !@event  
+    end
+
 
 end

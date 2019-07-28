@@ -30,9 +30,9 @@ class AttendsController < ApplicationController
         if @attend.save
             redirect_to attends_path
            
-          else
+         else
             flash[:message] = "Guest cannot be blank!"
-           redirect_to new_event_attend_path(@event)
+            redirect_to new_event_attend_path(@event)
         #redirect_to user_path(@user)
           end
     end
