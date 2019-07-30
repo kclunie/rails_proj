@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
+  get '/auth/facebook/callback' => 'sessions#create'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
@@ -20,6 +22,7 @@ Rails.application.routes.draw do
   get 'events/bydate' => 'events/date'
 
   get 'events/by_date', to: "events#by_date"
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
