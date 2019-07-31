@@ -1,26 +1,25 @@
-TEST!
+## Rails Booked App
 
-# README
+An event creation app that allows users to log in, sign up, create events and RSVP to attend events. Users can also add guests to their RSVP.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+To run this app, clone the repo and run bundle install. Then run rails s to fire up a server.
 
-* Ruby version
+## Contributing
 
-* System dependencies
+Feel free to contribute. Please fork, clone, and submit a PR if you like.
 
-* Configuration
+## Authors
 
-* Database creation
+&copy; 2019 by [Kristen Clunie](https://github.com/kclunie)
 
-* Database initialization
+## License
 
-* How to run the test suite
+This project is licensed under the MIT License:
 
-* Services (job queues, cache servers, search engines, etc.)
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-* Deployment instructions
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-* ...
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
