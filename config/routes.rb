@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'sessions#index'
 
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/:provider/callback' => 'sessions#create'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   resources :users 
   resources :events
 
-  get 'events/bydate' => 'events/date'
+  #get 'events/bydate' => 'events/date'
 
-  get 'events/by_date', to: "events#by_date"
+  #get 'events/by_date', to: "events#by_date"
 
 
 
