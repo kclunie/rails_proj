@@ -17,8 +17,9 @@ class SessionsController < ApplicationController
             u.password = SecureRandom.hex
             #u.image = auth['info']['image']
           end
+            @user.save
             session[:user_id] = @user.id
-            #redirect_to user_path(@user)
+            redirect_to user_path(@user)
         else
           @user = User.find_by(email: params[:user][:email])
             if @user && @user.authenticate(params[:user][:password])
