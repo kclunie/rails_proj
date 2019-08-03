@@ -10,7 +10,7 @@
     <%= f.hidden_field :event_id, :value => @event.id %>
 
     <%= f.label :guest, "How many guests will you bring?" %>
-    <%= f.number_field :guest %>
+    <%= f.number_field :guest, min:0, max:3 %>
     <br>
     <br>
     
