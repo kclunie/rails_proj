@@ -3,11 +3,11 @@ class EventsController < ApplicationController
     before_action :set_event, only: [:show]
 
     def index
-        if params[:user_id]
-            @events = User.find(params[:user_id]).events
-          else
+       # if params[:user_id]
+        #    @events = User.find(params[:user_id]).events
+         # else
         @events = Event.order_by_date
-    end
+    #end
     end
 
     def new
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
         @attend = Attend.new
         @attend.build_user
         @user = User.find(session[:user_id])
-        @attends = Attend.all
+        #@attends = Attend.all
 
     end
 

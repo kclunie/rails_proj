@@ -44,7 +44,7 @@ class AttendsController < ApplicationController
          :user_id,
          :event_id,
          :guest,
-         user_attributes:[:name, :age, :email, :password]
+         #user_attributes:[:name, :age, :email, :password]
       )
     end
 

@@ -4,8 +4,8 @@
 
 <p><%= @user.name %>'s Upcoming Events</p>
 
-<% x = @user.events %>
-<% y = x.uniq %>
+
+<% y = @user.events.uniq %>
 <% y.each do |z| %>
 <li><%= link_to "#{z.name}", event_path(z) %></li>
 <br>
