@@ -23,12 +23,21 @@ class EventsController < ApplicationController
         end 
     end
 
+    def popular_event
+        @events = Event.popular_event
+    end
+
     def show
        # @event = Event.find_by(id: params[:id])
         @attend = Attend.new
         @attend.build_user
         @user = User.find(session[:user_id])
+
         #@attends = Attend.all
+
+    end
+
+    def popular_events
 
     end
 

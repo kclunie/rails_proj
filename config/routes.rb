@@ -11,10 +11,13 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
 
+  get '/events/popular_event' => 'events#popular_event'
+  
   resources :events do 
     resources :attends, only: [:index, :new, :create]
   end
   
+
   resources :attends
   resources :users 
   resources :events
