@@ -2,6 +2,10 @@
 <h4>Date: <%= @event.date %></h4>
 <h4>Location: <%= @event.location %></h4>
 <h4>Details: <%= @event.details %></h4>
+<h4>Guests Attending: <% @event.users.uniq.each do |d| %></h4>
+    <ul><%= d.name %></ul>
+    <% end %>
+<br>
 
 <%= render partial: "layouts/errors", locals: {object: @attend} %>
 
