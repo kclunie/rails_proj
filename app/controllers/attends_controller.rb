@@ -31,7 +31,7 @@ class AttendsController < ApplicationController
             redirect_to attends_path
            
          else
-            flash[:message] = "Guest cannot be blank!"
+            flash[:message] = "Guest cannot be blank or you have already RSVPd!"
             redirect_to new_event_attend_path(@event)
         #redirect_to user_path(@user)
           end
