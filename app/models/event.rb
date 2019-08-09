@@ -8,6 +8,8 @@ class Event < ApplicationRecord
 
     scope :order_by_date, -> {order(date: :asc)}
 
-    #scope :popular_event, -> join(:attends).group(:id)
+    scope :popular_event, -> {joins(:attends).group(:id).order('count(attends.id) desc').limit(1)}
+  
+    
 
 end
