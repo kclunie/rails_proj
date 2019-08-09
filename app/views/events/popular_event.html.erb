@@ -1,13 +1,14 @@
 <br>
 <br>
-<h1>Popular Events</h1>
+<h1>Check out the most popular event trending now!</h1>
 <% @events.each do |f| %>
    
     <li><%= link_to "#{f.name}", event_path(f) %></li>
     <li><%= f.date %></li>
     <li><%= f.location %></li>
-    <li><%= link_to "RSVPs", event_attends_path(f) %></li>
+    <li><%= link_to "#{f.attends.count} RSVPs!!", event_attends_path(f) %></li> 
     <li><%= link_to "Add an RSVP", new_event_attend_path(f) %></li>
 
     <br>
     <% end %>
+
