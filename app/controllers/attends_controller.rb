@@ -28,12 +28,14 @@ class AttendsController < ApplicationController
         @attend = Attend.create(attends_params)
         
         if @attend.save
-            redirect_to attends_path
+            # binding.pry
+            redirect_to events_path
            
          else
             flash[:message] = "Guest cannot be blank or you have already RSVPd!"
             redirect_to new_event_attend_path(@event)
-        #redirect_to user_path(@user)
+
+        # redirect_to user_path(@user)
           end
     end
 
