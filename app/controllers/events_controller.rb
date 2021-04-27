@@ -7,6 +7,7 @@ class EventsController < ApplicationController
         #    @events = User.find(params[:user_id]).events
          # else
         @events = Event.order_by_date
+        
     #end
     end
 
