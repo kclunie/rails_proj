@@ -28,7 +28,6 @@ class AttendsController < ApplicationController
         @attend = Attend.create(attends_params)
         
         if @attend.save
-            # binding.pry
             redirect_to events_path
            
          else
